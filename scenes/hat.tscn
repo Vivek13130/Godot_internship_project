@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://esqspc0l7i16"]
+
+[ext_resource type="Texture2D" uid="uid://x55fqduhj2ig" path="res://assets/PNGs/Hat_.png" id="1_thx4h"]
+
+[node name="hat" type="Sprite2D"]
+z_index = 999
+position = Vector2(-1, 112)
+texture = ExtResource("1_thx4h")
+offset = Vector2(1, -112)
+
+[node name="hatArea" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hatArea"]
+position = Vector2(3, -111)
+scale = Vector2(1.01044, 0.995427)
+polygon = PackedVector2Array(-1, -110, 136.574, -84.3859, 136.967, 49.5107, 196.943, 85.3905, 2.969, 119.547, -216.737, 88.4043, -136.574, 54.2481, -136.574, -86.3951)

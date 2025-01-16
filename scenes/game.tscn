@@ -3,16 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://boacvekuk0q3e" path="res://scenes/tool_panel.tscn" id="1_ue61k"]
 [ext_resource type="PackedScene" uid="uid://cotksyc1eknrd" path="res://scenes/character_panel.tscn" id="2_f3fx5"]
 
-[node name="Game" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Game UI" type="CanvasLayer"]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

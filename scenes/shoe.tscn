@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8jyseajqvuij"]
+
+[ext_resource type="Texture2D" uid="uid://ctiertc6mgwqj" path="res://assets/PNGs/Shoes_.png" id="1_o80e8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nne22"]
+size = Vector2(305, 93)
+
+[node name="shoe" type="Sprite2D"]
+texture = ExtResource("1_o80e8")
+
+[node name="shoeArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shoeArea"]
+shape = SubResource("RectangleShape2D_nne22")

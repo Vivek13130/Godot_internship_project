@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cotksyc1eknrd"]
+[gd_scene load_steps=2 format=3 uid="uid://cotksyc1eknrd"]
 
 [ext_resource type="Script" path="res://scenes/character_panel.gd" id="1_vg48i"]
-[ext_resource type="Texture2D" uid="uid://cvv0wl5n8yxph" path="res://assets/PNGs/Character_.png" id="2_gutx0"]
-[ext_resource type="PackedScene" uid="uid://df3hqc8ouooep" path="res://character.tscn" id="3_l8cjh"]
 
 [node name="CharacterPanel" type="Control"]
 layout_mode = 3
@@ -14,6 +12,7 @@ grow_vertical = 2
 script = ExtResource("1_vg48i")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,21 +20,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.276732, 3.60981e-08, 0.119492, 1)
-
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-layout_mode = 2
-texture = ExtResource("2_gutx0")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Character" parent="MarginContainer" instance=ExtResource("3_l8cjh")]
-layout_mode = 2

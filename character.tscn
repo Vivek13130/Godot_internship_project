@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://df3hqc8ouooep"]
+[gd_scene load_steps=7 format=3 uid="uid://df3hqc8ouooep"]
 
+[ext_resource type="Script" path="res://character.gd" id="1_3iobu"]
 [ext_resource type="Texture2D" uid="uid://cvv0wl5n8yxph" path="res://assets/PNGs/Character_.png" id="1_by08l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1de55"]
@@ -17,50 +18,57 @@ radius = 44.0106
 height = 259.795
 
 [node name="Character" type="Node2D"]
+script = ExtResource("1_3iobu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_by08l")
 
 [node name="head" type="Node2D" parent="Sprite2D"]
 
-[node name="Area2D" type="Area2D" parent="Sprite2D/head"]
+[node name="HeadArea" type="Area2D" parent="Sprite2D/head"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/head/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/head/HeadArea"]
 position = Vector2(0, -212)
 shape = SubResource("CircleShape2D_1de55")
 
 [node name="MarkerHead" type="Marker2D" parent="Sprite2D/head"]
+position = Vector2(0, -362)
 
 [node name="body" type="Node2D" parent="Sprite2D"]
 
-[node name="Area2D" type="Area2D" parent="Sprite2D/body"]
+[node name="BodyArea" type="Area2D" parent="Sprite2D/body"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/body/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/body/BodyArea"]
 position = Vector2(-1, 113)
 shape = SubResource("CapsuleShape2D_ysmr8")
 debug_color = Color(0.288232, 0.630143, 0, 0.42)
 
 [node name="MarkerBody" type="Marker2D" parent="Sprite2D/body"]
+position = Vector2(0, 52)
 
 [node name="legs" type="Node2D" parent="Sprite2D"]
 
-[node name="Area2D" type="Area2D" parent="Sprite2D/legs"]
+[node name="LegsArea" type="Area2D" parent="Sprite2D/legs"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/legs/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/legs/LegsArea"]
 position = Vector2(-5, 290)
 shape = SubResource("CircleShape2D_6thgb")
 debug_color = Color(0.670568, 0.309023, 1, 0.42)
 
 [node name="MarkerLegs" type="Marker2D" parent="Sprite2D/legs"]
+position = Vector2(0, 289)
 
 [node name="feet" type="Node2D" parent="Sprite2D"]
 
-[node name="Area2D" type="Area2D" parent="Sprite2D/feet"]
+[node name="FeetArea" type="Area2D" parent="Sprite2D/feet"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/feet/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/feet/FeetArea"]
 position = Vector2(-2, 381)
 rotation = 1.58765
 shape = SubResource("CapsuleShape2D_3geyg")
 debug_color = Color(0.988851, 0, 0.297294, 0.42)
 
 [node name="MarkerFeet" type="Marker2D" parent="Sprite2D/feet"]
+position = Vector2(0, 379)
+
+[connection signal="area_entered" from="Sprite2D/head/HeadArea" to="." method="_on_head_area_area_entered"]

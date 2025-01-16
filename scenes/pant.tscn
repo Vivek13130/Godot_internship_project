@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhu6xixkm6clh"]
+
+[ext_resource type="Texture2D" uid="uid://clg6rcn60h4e8" path="res://assets/PNGs/Pant_.png" id="1_v6dd8"]
+
+[node name="pant" type="Sprite2D"]
+texture = ExtResource("1_v6dd8")
+
+[node name="pantArea" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pantArea"]
+position = Vector2(0.510273, 1.49063)
+scale = Vector2(1.0206, 0.990625)
+polygon = PackedVector2Array(-1, -95, 133, -101, 91, 98, -92, 99, -134, -98)
