@@ -1,4 +1,25 @@
-[gd_scene format=3 uid="uid://boacvekuk0q3e"]
+[gd_scene load_steps=8 format=3 uid="uid://boacvekuk0q3e"]
+
+[ext_resource type="FontFile" uid="uid://b6cby77ov0gap" path="res://assets/kirifont/KiriFont.otf" id="1_mte48"]
+[ext_resource type="Texture2D" uid="uid://x55fqduhj2ig" path="res://assets/PNGs/Hat_.png" id="1_vvo0v"]
+[ext_resource type="Texture2D" uid="uid://dtnucohwexsok" path="res://assets/PNGs/Shirt_.png" id="2_7xgo3"]
+[ext_resource type="Texture2D" uid="uid://clg6rcn60h4e8" path="res://assets/PNGs/Pant_.png" id="3_q0qj0"]
+[ext_resource type="Texture2D" uid="uid://ctiertc6mgwqj" path="res://assets/PNGs/Shoes_.png" id="4_at8bd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_42ums"]
+font = ExtResource("1_mte48")
+font_size = 50
+outline_size = 12
+outline_color = Color(0.891291, 4.18738e-06, 8.66354e-07, 1)
+shadow_size = 15
+shadow_color = Color(1, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6qfj4"]
+resource_name = "Cloth_name"
+font = ExtResource("1_mte48")
+font_size = 25
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="ToolPanel" type="Control"]
 layout_mode = 3
@@ -17,87 +38,177 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.00104088, 0.17869, 0, 1)
 
-[node name="OuterVBox" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
 
-[node name="Heading" type="RichTextLabel" parent="OuterVBox"]
+[node name="OuterVBox" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Heading" type="Label" parent="MarginContainer/OuterVBox"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_vertical = 3
-text = "Cool Clothes Corner!"
+size_flags_stretch_ratio = 2.0
+text = "CLOTHES"
+label_settings = SubResource("LabelSettings_42ums")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="MainVBox" type="VBoxContainer" parent="OuterVBox"]
+[node name="MainVBox" type="VBoxContainer" parent="MarginContainer/OuterVBox"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 10.0
-theme_override_constants/separation = 0
+theme_override_constants/separation = 20
 
-[node name="UpperHBox" type="HBoxContainer" parent="OuterVBox/MainVBox"]
+[node name="UpperHBox" type="HBoxContainer" parent="MarginContainer/OuterVBox/MainVBox"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/separation = 0
+theme_override_constants/separation = 50
 
-[node name="Card 1" type="VBoxContainer" parent="OuterVBox/MainVBox/UpperHBox"]
+[node name="Panel" type="Panel" parent="MarginContainer/OuterVBox/MainVBox/UpperHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="OuterVBox/MainVBox/UpperHBox/Card 1"]
+[node name="Card 1" type="VBoxContainer" parent="MarginContainer/OuterVBox/MainVBox/UpperHBox/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/OuterVBox/MainVBox/UpperHBox/Panel/Card 1"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 10.0
+texture = ExtResource("1_vvo0v")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="OuterVBox/MainVBox/UpperHBox/Card 1"]
+[node name="Name" type="Label" parent="MarginContainer/OuterVBox/MainVBox/UpperHBox/Panel/Card 1"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
+text = "HAT"
+label_settings = SubResource("LabelSettings_6qfj4")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Card 2" type="VBoxContainer" parent="OuterVBox/MainVBox/UpperHBox"]
+[node name="Panel2" type="Panel" parent="MarginContainer/OuterVBox/MainVBox/UpperHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="OuterVBox/MainVBox/UpperHBox/Card 2"]
+[node name="Card 2" type="VBoxContainer" parent="MarginContainer/OuterVBox/MainVBox/UpperHBox/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/OuterVBox/MainVBox/UpperHBox/Panel2/Card 2"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 10.0
+texture = ExtResource("2_7xgo3")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="OuterVBox/MainVBox/UpperHBox/Card 2"]
+[node name="Name" type="Label" parent="MarginContainer/OuterVBox/MainVBox/UpperHBox/Panel2/Card 2"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
+text = "SHIRT
+"
+label_settings = SubResource("LabelSettings_6qfj4")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="LowerHBox" type="HBoxContainer" parent="OuterVBox/MainVBox"]
+[node name="LowerHBox" type="HBoxContainer" parent="MarginContainer/OuterVBox/MainVBox"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 50
 
-[node name="Card 3" type="VBoxContainer" parent="OuterVBox/MainVBox/LowerHBox"]
+[node name="Panel" type="Panel" parent="MarginContainer/OuterVBox/MainVBox/LowerHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="OuterVBox/MainVBox/LowerHBox/Card 3"]
+[node name="Card 3" type="VBoxContainer" parent="MarginContainer/OuterVBox/MainVBox/LowerHBox/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/OuterVBox/MainVBox/LowerHBox/Panel/Card 3"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 10.0
+texture = ExtResource("3_q0qj0")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="OuterVBox/MainVBox/LowerHBox/Card 3"]
+[node name="Name" type="Label" parent="MarginContainer/OuterVBox/MainVBox/LowerHBox/Panel/Card 3"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
+text = "PANTS"
+label_settings = SubResource("LabelSettings_6qfj4")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Card 4" type="VBoxContainer" parent="OuterVBox/MainVBox/LowerHBox"]
+[node name="Panel2" type="Panel" parent="MarginContainer/OuterVBox/MainVBox/LowerHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="OuterVBox/MainVBox/LowerHBox/Card 4"]
+[node name="Card 4" type="VBoxContainer" parent="MarginContainer/OuterVBox/MainVBox/LowerHBox/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/OuterVBox/MainVBox/LowerHBox/Panel2/Card 4"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 10.0
+texture = ExtResource("4_at8bd")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="RichTextLabel" type="RichTextLabel" parent="OuterVBox/MainVBox/LowerHBox/Card 4"]
+[node name="Name" type="Label" parent="MarginContainer/OuterVBox/MainVBox/LowerHBox/Panel2/Card 4"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
+text = "SHOES
+"
+label_settings = SubResource("LabelSettings_6qfj4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/OuterVBox"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/OuterVBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+size_flags_stretch_ratio = 2.0
+focus_mode = 0
+text = "RESET"
