@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://df3hqc8ouooep"]
+
+[ext_resource type="Texture2D" uid="uid://cvv0wl5n8yxph" path="res://assets/PNGs/Character_.png" id="1_by08l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1de55"]
+radius = 226.009
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ysmr8"]
+radius = 165.0
+height = 330.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6thgb"]
+radius = 131.034
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3geyg"]
+radius = 44.0106
+height = 259.795
+
+[node name="Character" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_by08l")
+
+[node name="head" type="Node2D" parent="Sprite2D"]
+
+[node name="Area2D" type="Area2D" parent="Sprite2D/head"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/head/Area2D"]
+position = Vector2(0, -212)
+shape = SubResource("CircleShape2D_1de55")
+
+[node name="MarkerHead" type="Marker2D" parent="Sprite2D/head"]
+
+[node name="body" type="Node2D" parent="Sprite2D"]
+
+[node name="Area2D" type="Area2D" parent="Sprite2D/body"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/body/Area2D"]
+position = Vector2(-1, 113)
+shape = SubResource("CapsuleShape2D_ysmr8")
+debug_color = Color(0.288232, 0.630143, 0, 0.42)
+
+[node name="MarkerBody" type="Marker2D" parent="Sprite2D/body"]
+
+[node name="legs" type="Node2D" parent="Sprite2D"]
+
+[node name="Area2D" type="Area2D" parent="Sprite2D/legs"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/legs/Area2D"]
+position = Vector2(-5, 290)
+shape = SubResource("CircleShape2D_6thgb")
+debug_color = Color(0.670568, 0.309023, 1, 0.42)
+
+[node name="MarkerLegs" type="Marker2D" parent="Sprite2D/legs"]
+
+[node name="feet" type="Node2D" parent="Sprite2D"]
+
+[node name="Area2D" type="Area2D" parent="Sprite2D/feet"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/feet/Area2D"]
+position = Vector2(-2, 381)
+rotation = 1.58765
+shape = SubResource("CapsuleShape2D_3geyg")
+debug_color = Color(0.988851, 0, 0.297294, 0.42)
+
+[node name="MarkerFeet" type="Marker2D" parent="Sprite2D/feet"]
