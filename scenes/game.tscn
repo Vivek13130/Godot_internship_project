@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://3b2keqfcwayl"]
+
+[ext_resource type="PackedScene" uid="uid://boacvekuk0q3e" path="res://tool_panel.tscn" id="1_ue61k"]
+[ext_resource type="PackedScene" uid="uid://cotksyc1eknrd" path="res://character_panel.tscn" id="2_f3fx5"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="ToolPanel" parent="HBoxContainer" instance=ExtResource("1_ue61k")]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterPanel" parent="HBoxContainer" instance=ExtResource("2_f3fx5")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0

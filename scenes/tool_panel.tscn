@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://boacvekuk0q3e"]
+
+[node name="ToolPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00104088, 0.17869, 0, 1)
+
+[node name="OuterVBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Heading" type="RichTextLabel" parent="OuterVBox"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Cool Clothes Corner!"
+
+[node name="MainVBox" type="VBoxContainer" parent="OuterVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+theme_override_constants/separation = 0
+
+[node name="UpperHBox" type="HBoxContainer" parent="OuterVBox/MainVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Card 1" type="VBoxContainer" parent="OuterVBox/MainVBox/UpperHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="OuterVBox/MainVBox/UpperHBox/Card 1"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OuterVBox/MainVBox/UpperHBox/Card 1"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Card 2" type="VBoxContainer" parent="OuterVBox/MainVBox/UpperHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="OuterVBox/MainVBox/UpperHBox/Card 2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OuterVBox/MainVBox/UpperHBox/Card 2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="LowerHBox" type="HBoxContainer" parent="OuterVBox/MainVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Card 3" type="VBoxContainer" parent="OuterVBox/MainVBox/LowerHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="OuterVBox/MainVBox/LowerHBox/Card 3"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OuterVBox/MainVBox/LowerHBox/Card 3"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Card 4" type="VBoxContainer" parent="OuterVBox/MainVBox/LowerHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="OuterVBox/MainVBox/LowerHBox/Card 4"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OuterVBox/MainVBox/LowerHBox/Card 4"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
