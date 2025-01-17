@@ -76,7 +76,7 @@ shape = SubResource("CapsuleShape2D_3geyg")
 debug_color = Color(0.988851, 0, 0.297294, 0.42)
 
 [node name="MarkerFeet" type="Marker2D" parent="Sprite2D/feet"]
-position = Vector2(0, 406)
+position = Vector2(0, 412)
 
 [node name="head" type="CPUParticles2D" parent="."]
 show_behind_parent = true

@@ -37,15 +37,11 @@ func _ready() -> void:
 
 # will return the name of dropable in it's correct area 
 func find_valid_overlap() -> String:
-	
 	for item_name in drop_item_info.keys():
-		
 		if (drop_item_info[item_name]["item_inside_area"] and not drop_item_info[item_name]["placed"]):
 			drop_item_info[item_name]["placed"] = true
 			return item_name
-	
 	return ""
-
 
 func check_overall_placement():
 	var count = 0 
@@ -57,8 +53,8 @@ func check_overall_placement():
 		$overall.emitting = true
 	return count
 
+
 func set_correct_position(dragged_item_name : String , dragged_item_instance ) :
-	
 	drop_item_info[dragged_item_name]["placed"] = true
 	
 	# particle logic : 
@@ -77,10 +73,8 @@ func set_correct_position(dragged_item_name : String , dragged_item_instance ) :
 			_:
 				print("Unknown item")
 	
-	
 	# setting at correct position 
 	var correct_pos : Vector2 = Vector2.INF
-	
 	if(drop_item_info[dragged_item_name]):
 		correct_pos = drop_item_info[dragged_item_name]["marker"].global_position
 	else:
