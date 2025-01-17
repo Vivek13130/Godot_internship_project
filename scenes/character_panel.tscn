@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cotksyc1eknrd"]
-
-[ext_resource type="Script" path="res://scenes/character_panel.gd" id="1_vg48i"]
+[gd_scene format=3 uid="uid://cotksyc1eknrd"]
 
 [node name="CharacterPanel" type="Control"]
 layout_mode = 3
@@ -9,14 +7,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_vg48i")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.276732, 3.60981e-08, 0.119492, 1)
+color = Color(0.406955, 0.150814, 0, 1)

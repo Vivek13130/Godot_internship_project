@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ccjsibrc0cwin" path="res://scenes/drag_drop.tscn" id="3_gafl1"]
 
 [node name="gameplay" type="Node2D"]
+z_index = 999
 script = ExtResource("1_sy1rp")
 
 [node name="Character" parent="." instance=ExtResource("2_mx6cu")]
@@ -13,3 +14,5 @@ scale = Vector2(0.6, 0.6)
 
 [node name="DragDrop" parent="." instance=ExtResource("3_gafl1")]
 position = Vector2(-228, 260)
+
+[node name="DroppedItems" type="Node2D" parent="."]

@@ -6,5 +6,6 @@
 [node name="Main" type="Node2D"]
 
 [node name="Game UI" parent="." instance=ExtResource("1_p7u6o")]
+layer = -1
 
 [node name="gameplay" parent="." instance=ExtResource("2_aqiiy")]

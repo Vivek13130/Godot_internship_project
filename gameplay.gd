@@ -7,13 +7,12 @@ var viewport : Vector2 # to store the viewport size
 
 func _ready() -> void:
 	handle_character_position()
-
+	Manager.gameplay_layer_node = $"." 
 
 func _process(delta: float) -> void:
 	if(get_viewport().size.x != viewport.x || get_viewport().size.y != viewport.y):
 		# if viewport changes , recalculate the position 
 		handle_character_position()
-
 
 func handle_character_position():
 	# this function will make sure our character stay in center of screen

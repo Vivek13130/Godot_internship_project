@@ -25,9 +25,9 @@ texture = ExtResource("1_by08l")
 
 [node name="head" type="Node2D" parent="Sprite2D"]
 
-[node name="HeadArea" type="Area2D" parent="Sprite2D/head"]
+[node name="HeadDetectionArea" type="Area2D" parent="Sprite2D/head"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/head/HeadArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/head/HeadDetectionArea"]
 position = Vector2(0, -212)
 shape = SubResource("CircleShape2D_1de55")
 
@@ -36,9 +36,9 @@ position = Vector2(0, -362)
 
 [node name="body" type="Node2D" parent="Sprite2D"]
 
-[node name="BodyArea" type="Area2D" parent="Sprite2D/body"]
+[node name="BodyDetectionArea" type="Area2D" parent="Sprite2D/body"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/body/BodyArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/body/BodyDetectionArea"]
 position = Vector2(-1, 113)
 shape = SubResource("CapsuleShape2D_ysmr8")
 debug_color = Color(0.288232, 0.630143, 0, 0.42)
@@ -48,9 +48,9 @@ position = Vector2(0, 52)
 
 [node name="legs" type="Node2D" parent="Sprite2D"]
 
-[node name="LegsArea" type="Area2D" parent="Sprite2D/legs"]
+[node name="LegsDetectionArea" type="Area2D" parent="Sprite2D/legs"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/legs/LegsArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/legs/LegsDetectionArea"]
 position = Vector2(-5, 290)
 shape = SubResource("CircleShape2D_6thgb")
 debug_color = Color(0.670568, 0.309023, 1, 0.42)
@@ -60,9 +60,9 @@ position = Vector2(0, 289)
 
 [node name="feet" type="Node2D" parent="Sprite2D"]
 
-[node name="FeetArea" type="Area2D" parent="Sprite2D/feet"]
+[node name="FeetDetectionArea" type="Area2D" parent="Sprite2D/feet"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/feet/FeetArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/feet/FeetDetectionArea"]
 position = Vector2(-2, 381)
 rotation = 1.58765
 shape = SubResource("CapsuleShape2D_3geyg")
@@ -71,4 +71,11 @@ debug_color = Color(0.988851, 0, 0.297294, 0.42)
 [node name="MarkerFeet" type="Marker2D" parent="Sprite2D/feet"]
 position = Vector2(0, 379)
 
-[connection signal="area_entered" from="Sprite2D/head/HeadArea" to="." method="_on_head_area_area_entered"]
+[connection signal="area_entered" from="Sprite2D/head/HeadDetectionArea" to="." method="_on_head_detection_area_area_entered"]
+[connection signal="area_exited" from="Sprite2D/head/HeadDetectionArea" to="." method="_on_head_detection_area_area_exited"]
+[connection signal="area_entered" from="Sprite2D/body/BodyDetectionArea" to="." method="_on_body_detection_area_area_entered"]
+[connection signal="area_exited" from="Sprite2D/body/BodyDetectionArea" to="." method="_on_body_detection_area_area_exited"]
+[connection signal="area_entered" from="Sprite2D/legs/LegsDetectionArea" to="." method="_on_legs_detection_area_area_entered"]
+[connection signal="area_exited" from="Sprite2D/legs/LegsDetectionArea" to="." method="_on_legs_detection_area_area_exited"]
+[connection signal="area_entered" from="Sprite2D/feet/FeetDetectionArea" to="." method="_on_feet_detection_area_area_entered"]
+[connection signal="area_exited" from="Sprite2D/feet/FeetDetectionArea" to="." method="_on_feet_detection_area_area_exited"]
