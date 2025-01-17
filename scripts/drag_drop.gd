@@ -15,15 +15,14 @@ func _on_item_selected(item_name, item_scene_path):
 	# if it is not added to scene tree, then it will not be visible
 
 
-func handle_scale(item_name , dragged_item): # custom scale values , so that dress fits character
+func handle_scale(item_name , _dragged_item_inst): # custom scale values , so that dress fits character
 	if(Manager.custom_scale_values[item_name]):
-		print("setting custom scale ")
 		dragged_item.scale = Manager.custom_scale_values[item_name]
 	else:
 		print("setting scale of invalid item : " , item_name)
 
 
-func _process(delta):
+func _process(_delta):
 	if dragged_item:
 		dragged_item.global_position = get_global_mouse_position()  
 
@@ -39,10 +38,8 @@ func _input(event: InputEvent) -> void:
 		var character = get_parent().get_node("Character")
 		if character : 
 			var correct_overlap = character.find_valid_overlap()
-			print("correct overlap ----- " , correct_overlap)
 			if(correct_overlap == ""):
 				# no valid overlap found , reset position 
-				print("resetting position ")
 				Manager.reset_position(dragged_item_name, temp_dragged_item)
 			else:
 				character.set_correct_position(dragged_item_name , temp_dragged_item)

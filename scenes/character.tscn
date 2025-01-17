@@ -76,7 +76,7 @@ shape = SubResource("CapsuleShape2D_3geyg")
 debug_color = Color(0.988851, 0, 0.297294, 0.42)
 
 [node name="MarkerFeet" type="Marker2D" parent="Sprite2D/feet"]
-position = Vector2(0, 417)
+position = Vector2(0, 406)
 
 [node name="head" type="CPUParticles2D" parent="."]
 show_behind_parent = true
@@ -168,8 +168,10 @@ spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 300.0
 initial_velocity_max = 500.0
-angular_velocity_max = 500.0
-damping_max = 5.0
+angular_velocity_min = 400.0
+angular_velocity_max = 720.0
+radial_accel_max = 50.0
+damping_max = 10.0
 scale_amount_min = 10.0
 scale_amount_max = 18.0
 color = Color(1, 1, 0, 1)

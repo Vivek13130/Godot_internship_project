@@ -33,7 +33,7 @@ var custom_scale_values = {
 	"hat" : Vector2(0.65, 0.65),
 	"shirt" : Vector2(0.65, 0.8),
 	"pant" : Vector2(0.65, 0.6),
-	"shoes" : Vector2(0.7, 0.6)
+	"shoes" : Vector2(0.7, 0.7)
 }
 
 
@@ -66,7 +66,7 @@ func reset_position(dragged_item_Name , dragged_item_Instance):
 
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# resetting the position in this if condition
 	if(moving_to_reset and dragged_item_instance): 
 		var current_position = dragged_item_instance.global_position

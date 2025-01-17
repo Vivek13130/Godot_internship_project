@@ -9,7 +9,7 @@ z_index = 999
 script = ExtResource("1_sy1rp")
 
 [node name="Character" parent="." instance=ExtResource("2_mx6cu")]
-position = Vector2(805, 334)
+position = Vector2(1207, 526)
 scale = Vector2(0.6, 0.6)
 
 [node name="DragDrop" parent="." instance=ExtResource("3_gafl1")]

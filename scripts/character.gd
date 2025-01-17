@@ -40,17 +40,10 @@ func find_valid_overlap() -> String:
 	
 	for item_name in drop_item_info.keys():
 		
-		print(drop_item_info[item_name])
-		print()
 		if (drop_item_info[item_name]["item_inside_area"] and not drop_item_info[item_name]["placed"]):
-			print("this is still overlappigng -- ", item_name)
 			drop_item_info[item_name]["placed"] = true
-			check_overall_placement()
-			print(drop_item_info[item_name])
-			print()
 			return item_name
 	
-	print("returned @@@@ ")
 	return ""
 
 
@@ -62,23 +55,27 @@ func check_overall_placement():
 	
 	if(count == drop_item_info.size()):
 		$overall.emitting = true
+	return count
 
 func set_correct_position(dragged_item_name : String , dragged_item_instance ) :
 	
 	drop_item_info[dragged_item_name]["placed"] = true
 	
 	# particle logic : 
-	match dragged_item_name:
-		"hat":
-			$head.emitting = true
-		"shirt":
-			$body.emitting = true
-		"pant":
-			$leg.emitting = true
-		"shoes":
-			$feet.emitting = true
-		_:
-			print("Unknown item")
+	if(check_overall_placement() < drop_item_info.size()):
+		# overall particles are differnt than normal ones
+		# so not emitting both together when all clothes are placed
+		match dragged_item_name:
+			"hat":
+				$head.emitting = true
+			"shirt":
+				$body.emitting = true
+			"pant":
+				$leg.emitting = true
+			"shoes":
+				$feet.emitting = true
+			_:
+				print("Unknown item")
 	
 	
 	# setting at correct position 
@@ -130,7 +127,6 @@ func _on_legs_detection_area_area_exited(area: Area2D) -> void:
 
 func _on_feet_detection_area_area_entered(area: Area2D) -> void:
 	if(area.name == "shoeArea"):
-		print("shoe detected : " , area.name)
 		drop_item_info["shoes"]["item_inside_area"] = true
 
 func _on_feet_detection_area_area_exited(area: Area2D) -> void:

@@ -62,5 +62,4 @@ func _on_card_4_gui_input(event: InputEvent) -> void:
 
 func _on_button_pressed() -> void:
 	# restart the game 
-	var current_scene = get_tree().current_scene  # Get the current scene
-	get_tree().reload_current_scene()  # Reload the current scene
+	get_tree().reload_current_scene()  

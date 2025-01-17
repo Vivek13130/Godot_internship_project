@@ -213,6 +213,8 @@ custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
 size_flags_stretch_ratio = 2.0
 focus_mode = 0
+theme_override_fonts/font = ExtResource("1_mte48")
+theme_override_font_sizes/font_size = 25
 text = "RESET"
 
 [connection signal="gui_input" from="MarginContainer/OuterVBox/MainVBox/UpperHBox/Panel/hatCard" to="." method="_on_card_1_gui_input"]
