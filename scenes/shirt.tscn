@@ -6,6 +6,7 @@
 texture = ExtResource("1_6e8u4")
 
 [node name="shirtArea" type="Area2D" parent="."]
+position = Vector2(0, 5)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="shirtArea"]
-polygon = PackedVector2Array(0, 101, 136, 101, 184, -35, 110, -107, -109, -107, -188, -38, -127, 92)
+polygon = PackedVector2Array(0, 101, 138, 70, 184, -35, 110, -107, -109, -107, -188, -38, -130, 76)

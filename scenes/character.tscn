@@ -1,0 +1,185 @@
+[gd_scene load_steps=8 format=3 uid="uid://df3hqc8ouooep"]
+
+[ext_resource type="Script" path="res://scripts/character.gd" id="1_j67eb"]
+[ext_resource type="Texture2D" uid="uid://cvv0wl5n8yxph" path="res://assets/PNGs/Character_.png" id="2_jckmf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fg8vr"]
+radius = 54.9323
+height = 305.982
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ysmr8"]
+radius = 106.0
+height = 252.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e1eke"]
+radius = 57.0367
+height = 218.007
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3geyg"]
+radius = 23.9798
+height = 259.795
+
+[sub_resource type="Gradient" id="Gradient_1jds4"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
+
+[node name="Character" type="Node2D"]
+script = ExtResource("1_j67eb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_jckmf")
+
+[node name="head" type="Node2D" parent="Sprite2D"]
+
+[node name="HeadDetectionArea" type="Area2D" parent="Sprite2D/head"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/head/HeadDetectionArea"]
+position = Vector2(2, -376)
+rotation = 1.55161
+shape = SubResource("CapsuleShape2D_fg8vr")
+
+[node name="MarkerHead" type="Marker2D" parent="Sprite2D/head"]
+position = Vector2(0, -438)
+
+[node name="body" type="Node2D" parent="Sprite2D"]
+
+[node name="BodyDetectionArea" type="Area2D" parent="Sprite2D/body"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/body/BodyDetectionArea"]
+position = Vector2(-1, 113)
+shape = SubResource("CapsuleShape2D_ysmr8")
+debug_color = Color(0.288232, 0.630143, 0, 0.42)
+
+[node name="MarkerBody" type="Marker2D" parent="Sprite2D/body"]
+position = Vector2(0, 106)
+
+[node name="legs" type="Node2D" parent="Sprite2D"]
+
+[node name="LegsDetectionArea" type="Area2D" parent="Sprite2D/legs"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/legs/LegsDetectionArea"]
+position = Vector2(-2, 304)
+rotation = 1.55668
+shape = SubResource("CapsuleShape2D_e1eke")
+debug_color = Color(0.670568, 0.309023, 1, 0.42)
+
+[node name="MarkerLegs" type="Marker2D" parent="Sprite2D/legs"]
+position = Vector2(0, 291)
+
+[node name="feet" type="Node2D" parent="Sprite2D"]
+
+[node name="FeetDetectionArea" type="Area2D" parent="Sprite2D/feet"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/feet/FeetDetectionArea"]
+position = Vector2(-8, 393)
+rotation = 1.58765
+shape = SubResource("CapsuleShape2D_3geyg")
+debug_color = Color(0.988851, 0, 0.297294, 0.42)
+
+[node name="MarkerFeet" type="Marker2D" parent="Sprite2D/feet"]
+position = Vector2(0, 417)
+
+[node name="head" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2(0, -368)
+emitting = false
+amount = 100
+lifetime = 1.75
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.25
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 300.0
+angular_velocity_max = 500.0
+damping_max = 5.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+
+[node name="body" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2(0, 112)
+emitting = false
+amount = 100
+lifetime = 1.75
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.25
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 300.0
+angular_velocity_max = 500.0
+damping_max = 5.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+
+[node name="leg" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2(0, 294)
+emitting = false
+amount = 100
+lifetime = 1.75
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.25
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 300.0
+angular_velocity_max = 500.0
+damping_max = 5.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+
+[node name="feet" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2(0, 390)
+emitting = false
+amount = 100
+lifetime = 1.75
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.25
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 300.0
+angular_velocity_max = 500.0
+damping_max = 5.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+
+[node name="overall" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2(0, 47)
+emitting = false
+amount = 100
+lifetime = 2.75
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.25
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 500.0
+angular_velocity_max = 500.0
+damping_max = 5.0
+scale_amount_min = 10.0
+scale_amount_max = 18.0
+color = Color(1, 1, 0, 1)
+color_ramp = SubResource("Gradient_1jds4")
+
+[connection signal="area_entered" from="Sprite2D/head/HeadDetectionArea" to="." method="_on_head_detection_area_area_entered"]
+[connection signal="area_exited" from="Sprite2D/head/HeadDetectionArea" to="." method="_on_head_detection_area_area_exited"]
+[connection signal="area_entered" from="Sprite2D/body/BodyDetectionArea" to="." method="_on_body_detection_area_area_entered"]
+[connection signal="area_exited" from="Sprite2D/body/BodyDetectionArea" to="." method="_on_body_detection_area_area_exited"]
+[connection signal="area_entered" from="Sprite2D/legs/LegsDetectionArea" to="." method="_on_legs_detection_area_area_entered"]
+[connection signal="area_exited" from="Sprite2D/legs/LegsDetectionArea" to="." method="_on_legs_detection_area_area_exited"]
+[connection signal="area_entered" from="Sprite2D/feet/FeetDetectionArea" to="." method="_on_feet_detection_area_area_entered"]
+[connection signal="area_exited" from="Sprite2D/feet/FeetDetectionArea" to="." method="_on_feet_detection_area_area_exited"]

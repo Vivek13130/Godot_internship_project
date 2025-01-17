@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://boacvekuk0q3e"]
 
-[ext_resource type="Script" path="res://scenes/tool_panel.gd" id="1_effyl"]
+[ext_resource type="Script" path="res://scripts/tool_panel.gd" id="1_effyl"]
 [ext_resource type="FontFile" uid="uid://b6cby77ov0gap" path="res://assets/kirifont/KiriFont.otf" id="1_mte48"]
 [ext_resource type="Texture2D" uid="uid://x55fqduhj2ig" path="res://assets/PNGs/Hat_.png" id="1_vvo0v"]
 [ext_resource type="Texture2D" uid="uid://dtnucohwexsok" path="res://assets/PNGs/Shirt_.png" id="2_7xgo3"]
@@ -219,3 +219,4 @@ text = "RESET"
 [connection signal="gui_input" from="MarginContainer/OuterVBox/MainVBox/UpperHBox/Panel2/shirtCard" to="." method="_on_card_2_gui_input"]
 [connection signal="gui_input" from="MarginContainer/OuterVBox/MainVBox/LowerHBox/Panel/pantsCard" to="." method="_on_card_3_gui_input"]
 [connection signal="gui_input" from="MarginContainer/OuterVBox/MainVBox/LowerHBox/Panel2/shoesCard" to="." method="_on_card_4_gui_input"]
+[connection signal="pressed" from="MarginContainer/OuterVBox/Button" to="." method="_on_button_pressed"]

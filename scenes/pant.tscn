@@ -3,7 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://clg6rcn60h4e8" path="res://assets/PNGs/Pant_.png" id="1_v6dd8"]
 
 [node name="pant" type="Sprite2D"]
+z_index = 5
+position = Vector2(-1, -2)
 texture = ExtResource("1_v6dd8")
+offset = Vector2(2, 2)
 
 [node name="pantArea" type="Area2D" parent="."]
 

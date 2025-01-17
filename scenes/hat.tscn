@@ -4,11 +4,12 @@
 
 [node name="hat" type="Sprite2D"]
 z_index = 999
-position = Vector2(-1, 112)
+position = Vector2(-1, 0)
 texture = ExtResource("1_thx4h")
-offset = Vector2(1, -112)
+offset = Vector2(1, 0)
 
 [node name="hatArea" type="Area2D" parent="."]
+position = Vector2(0, 111)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hatArea"]
 position = Vector2(3, -111)
