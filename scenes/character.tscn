@@ -78,7 +78,7 @@ debug_color = Color(0.988851, 0, 0.297294, 0.42)
 [node name="MarkerFeet" type="Marker2D" parent="Sprite2D/feet"]
 position = Vector2(0, 412)
 
-[node name="head" type="CPUParticles2D" parent="."]
+[node name="head_particles" type="CPUParticles2D" parent="."]
 show_behind_parent = true
 position = Vector2(0, -368)
 emitting = false
@@ -97,7 +97,7 @@ damping_max = 5.0
 scale_amount_min = 5.0
 scale_amount_max = 10.0
 
-[node name="body" type="CPUParticles2D" parent="."]
+[node name="body_particles" type="CPUParticles2D" parent="."]
 show_behind_parent = true
 position = Vector2(0, 112)
 emitting = false
@@ -116,7 +116,7 @@ damping_max = 5.0
 scale_amount_min = 5.0
 scale_amount_max = 10.0
 
-[node name="leg" type="CPUParticles2D" parent="."]
+[node name="leg_particles" type="CPUParticles2D" parent="."]
 show_behind_parent = true
 position = Vector2(0, 294)
 emitting = false
@@ -135,7 +135,7 @@ damping_max = 5.0
 scale_amount_min = 5.0
 scale_amount_max = 10.0
 
-[node name="feet" type="CPUParticles2D" parent="."]
+[node name="feet_particles" type="CPUParticles2D" parent="."]
 show_behind_parent = true
 position = Vector2(0, 390)
 emitting = false
@@ -154,7 +154,7 @@ damping_max = 5.0
 scale_amount_min = 5.0
 scale_amount_max = 10.0
 
-[node name="overall" type="CPUParticles2D" parent="."]
+[node name="overall_particles" type="CPUParticles2D" parent="."]
 show_behind_parent = true
 position = Vector2(0, 47)
 emitting = false

@@ -18,10 +18,6 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 
 Manager="*res://scripts/manager.gd"
 
-[display]
-
-window/size/mode=3
-
 [input]
 
 exit={

@@ -50,7 +50,7 @@ func check_overall_placement():
 			count += 1
 	
 	if(count == drop_item_info.size()):
-		$overall.emitting = true
+		$overall_particles.emitting = true
 	return count
 
 
@@ -63,13 +63,13 @@ func set_correct_position(dragged_item_name : String , dragged_item_instance ) :
 		# so not emitting both together when all clothes are placed
 		match dragged_item_name:
 			"hat":
-				$head.emitting = true
+				$head_particles.emitting = true
 			"shirt":
-				$body.emitting = true
+				$body_particles.emitting = true
 			"pant":
-				$leg.emitting = true
+				$leg_particles.emitting = true
 			"shoes":
-				$feet.emitting = true
+				$feet_particles.emitting = true
 			_:
 				print("Unknown item")
 	

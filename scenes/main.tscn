@@ -9,3 +9,4 @@
 layer = -1
 
 [node name="gameplay" parent="." instance=ExtResource("2_aqiiy")]
+position = Vector2(1234, 6)
